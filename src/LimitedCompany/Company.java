@@ -1,5 +1,7 @@
 package LimitedCompany;
 
+import java.util.ArrayList;
+
 public class Company extends PersonContactDetails {
 
 
@@ -98,6 +100,12 @@ public class Company extends PersonContactDetails {
     public void setCompanyVatNumber(int companyVatNumber) {
         this.companyVatNumber = companyVatNumber;
     }
+
+    /*--------------------------------------------------------------------------------------------*/
+
+
+
+
 
 
     public String toString() {
