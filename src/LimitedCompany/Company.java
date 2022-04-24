@@ -1,113 +1,38 @@
 package LimitedCompany;
 
-public class Company {
-    // Company director general informations
-    private String companyDirectorName = null;
-    private String companyDirectorSurname = null;
-    private String companyDirectorGender = null;
-    private String companyDirectorNinoNumber = null;
-    private String companyDirectorUtr = null;
-    // Company director contact details
-    private String companyDirectorEmail = null;
-    private String companyDirectorAddress = null;
-    private long companyDirectorMobile = 0;
-    //Company details
-    private String companyName = null;
-    private int companyNumber = 0;
-    private String companyAddress = null;
-    private String companyUtr = null;
-    private String companyAuthCode = null;
+public class Company extends PersonContactDetails {
+
+
+   //Company details
+    private String companyName;
+    private int companyNumber;
+    private String companyAddress;
+    private int companyUtr;
+    private String companyAuthCode;
+
     //Company PAYE details
-    private String companyPayeRef = null;
-    private String companyPayeOfficeRef = null;
+    private String companyPayeRef;
+    private String companyPayeOfficeRef;
+
     //Company VAT details
-    private int companyVatNumber = 0;
+    private int companyVatNumber;
 
-    public Company(String companyDirectorName, String companyDirectorSurname, String companyDirectorGender, String companyDirectorNinoNumber, String companyDirectorUtr, String companyDirectorEmail, String companyDirectorAddress, long companyDirectorMobile, String companyName, int companyNumber, String companyAddress, String companyUtr, String companyAuthCode, String companyPayeRef, String companyPayeOfficeRef, int companyVatNumber) {
-        setCompanyDirectorName(companyDirectorName);
-        setCompanyDirectorSurname(companyDirectorSurname);
-        setCompanyDirectorGender(companyDirectorGender);
-        setCompanyDirectorNinoNumber(companyDirectorNinoNumber);
-        setCompanyDirectorUtr(companyDirectorUtr);
-        setCompanyDirectorEmail(companyDirectorEmail);
-        setCompanyDirectorAddress(companyDirectorAddress);
-        setCompanyDirectorMobile(companyDirectorMobile);
-        setCompanyName(companyName);
-        setCompanyNumber(companyNumber);
-        setCompanyAddress(companyAddress);
-        setCompanyUtr(companyUtr);
-        setCompanyAuthCode(companyAuthCode);
-        setCompanyPayeRef(companyPayeRef);
-        setCompanyPayeOfficeRef(companyPayeOfficeRef);
-        setCompanyVatNumber(companyVatNumber);
+    public Company(String name, int age, char gender, int ninoNumber, int utrNumber, String personEmail, String personAddress, long personMobile, String companyName, int companyNumber, String companyAddress, int companyUtr, String companyAuthCode, String companyPayeRef, String companyPayeOfficeRef, int companyVatNumber) {
+        super(name, age, gender, ninoNumber, utrNumber, personEmail, personAddress, personMobile);
+        this.companyName = companyName;
+        this.companyNumber = companyNumber;
+        this.companyAddress = companyAddress;
+        this.companyUtr = companyUtr;
+        this.companyAuthCode = companyAuthCode;
+        this.companyPayeRef = companyPayeRef;
+        this.companyPayeOfficeRef = companyPayeOfficeRef;
+        this.companyVatNumber = companyVatNumber;
     }
 
-    Company() {
 
-    }
 
-    public String getCompanyDirectorName() {
-        return companyDirectorName;
-    }
-
-    public void setCompanyDirectorName(String companyDirectorName) {
-        this.companyDirectorName = companyDirectorName;
-    }
-
-    public String getCompanyDirectorSurname() {
-        return companyDirectorSurname;
-    }
-
-    public void setCompanyDirectorSurname(String companyDirectorSurname) {
-        this.companyDirectorSurname = companyDirectorSurname;
-    }
-
-    public String getCompanyDirectorGender() {
-        return companyDirectorGender;
-    }
-
-    public void setCompanyDirectorGender(String companyDirectorGender) {
-        this.companyDirectorGender = companyDirectorGender;
-    }
-
-    public String getCompanyDirectorNinoNumber() {
-        return companyDirectorNinoNumber;
-    }
-
-    public void setCompanyDirectorNinoNumber(String companyDirectorNinoNumber) {
-        this.companyDirectorNinoNumber = companyDirectorNinoNumber;
-    }
-
-    public String getCompanyDirectorUtr() {
-        return companyDirectorUtr;
-    }
-
-    public void setCompanyDirectorUtr(String companyDirectorUtr) {
-        this.companyDirectorUtr = companyDirectorUtr;
-    }
-
-    public String getCompanyDirectorEmail() {
-        return companyDirectorEmail;
-    }
-
-    public void setCompanyDirectorEmail(String companyDirectorEmail) {
-        this.companyDirectorEmail = companyDirectorEmail;
-    }
-
-    public String getCompanyDirectorAddress() {
-        return companyDirectorAddress;
-    }
-
-    public void setCompanyDirectorAddress(String companyDirectorAddress) {
-        this.companyDirectorAddress = companyDirectorAddress;
-    }
-
-    public long getCompanyDirectorMobile() {
-        return companyDirectorMobile;
-    }
-
-    public void setCompanyDirectorMobile(long companyDirectorMobile) {
-        this.companyDirectorMobile = companyDirectorMobile;
+    public Company() {
+        super();
     }
 
     public String getCompanyName() {
@@ -134,11 +59,11 @@ public class Company {
         this.companyAddress = companyAddress;
     }
 
-    public String getCompanyUtr() {
+    public int getCompanyUtr() {
         return companyUtr;
     }
 
-    public void setCompanyUtr(String companyUtr) {
+    public void setCompanyUtr(int companyUtr) {
         this.companyUtr = companyUtr;
     }
 
@@ -176,19 +101,25 @@ public class Company {
 
 
     public String toString() {
-        return "Company{" +
-                "companyDirectorName='" + companyDirectorName + '\'' +
-                ", companyDirectorSurname='" + companyDirectorSurname + '\'' +
-                ", companyDirectorGender='" + companyDirectorGender + '\'' +
-                ", companyDirectorNinoNumber='" + companyDirectorNinoNumber + '\'' +
-                ", companyDirectorUtr='" + companyDirectorUtr + '\'' +
-                ", companyDirectorEmail='" + companyDirectorEmail + '\'' +
-                ", companyDirectorAddress='" + companyDirectorAddress + '\'' +
-                ", companyDirectorMobile=" + companyDirectorMobile +
-                ", companyName='" + companyName + '\'' +
+        return "Person{" +
+                "name='" + getName() + '\'' +
+                ", age=" + getAge() +
+                ", gender=" + getGender() +
+                '}'+  "\n" +
+
+
+                "PersonContactDetails{" +
+                "personEmail='" + getPersonEmail() + '\'' +
+                ", personAddress='" + getPersonAddress() + '\'' +
+                ", personMobile=" + getPersonMobile() +
+                '}'+  "\n" +
+
+
+                "Company{" +
+                "companyName='" + companyName + '\'' +
                 ", companyNumber=" + companyNumber +
                 ", companyAddress='" + companyAddress + '\'' +
-                ", companyUtr='" + companyUtr + '\'' +
+                ", companyUtr=" + companyUtr +
                 ", companyAuthCode='" + companyAuthCode + '\'' +
                 ", companyPayeRef='" + companyPayeRef + '\'' +
                 ", companyPayeOfficeRef='" + companyPayeOfficeRef + '\'' +
